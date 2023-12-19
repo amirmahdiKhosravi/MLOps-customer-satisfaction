@@ -69,4 +69,17 @@ class DataCleaing:
         self.data = data
         self.strategy = strategy
     
-    
+    def handle_data(self):
+        """
+        handle data
+        """
+        try:
+            return self.strategy.handle_data(self.data)
+        except Exception as e:
+            logging.error(f"Error in handle data method in DataCleaning: {e}")
+            raise e
+
+"""if __name__ == "__main__":
+    data = pd.read_csv("/home/amirmahdi/projects/MLOps-customer-satisfaction/data/olist_customers_dataset.csv")
+    data_cleaning = DataCleaing(data, DataPreProcessStrategy())
+    data_cleaning.handle_data()"""
