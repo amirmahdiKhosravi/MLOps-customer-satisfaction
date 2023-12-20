@@ -8,9 +8,7 @@ from .config import ModelNameConfig
 @step
 def train_model(
     X_train: pd.DataFrame,
-    X_test: pd.DataFrame,
-    y_train: pd.DataFrame,
-    y_test: pd.DataFrame, 
+    y_train: pd.DataFrame, 
     config: ModelNameConfig
 ) -> RegressorMixin:
     """
@@ -22,8 +20,8 @@ def train_model(
     try:
         model = None
         if config.model_name == "LinearRegression":
-            model = LinearRegressionModel(X_train, y_train)
-            trained_model = model.train()
+            model = LinearRegressionModel()
+            trained_model = model.train(X_train, y_train)
             return trained_model
         else:
             raise ValueError("Model {} not supported".format(config.model_name))
