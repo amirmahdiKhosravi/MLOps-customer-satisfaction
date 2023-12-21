@@ -1,0 +1,15 @@
+artifact_uri: file:///home/amirmahdi/projects/MLOps-customer-satisfaction/mlruns/0/d4f57b1945b84f068f1a53b9f96be345/artifacts
+end_time: 1703117412859
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d4f57b1945b84f068f1a53b9f96be345
+run_name: colorful-zebra-887
+run_uuid: d4f57b1945b84f068f1a53b9f96be345
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703117411856
+status: 3
+tags: []
+user_id: amirmahdi

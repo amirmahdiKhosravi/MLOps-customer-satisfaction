@@ -1,0 +1,15 @@
+artifact_uri: file:///home/amirmahdi/projects/MLOps-customer-satisfaction/mlruns/0/05174944e7e74d31953ae315ae4c5028/artifacts
+end_time: 1703116555454
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 05174944e7e74d31953ae315ae4c5028
+run_name: learned-ray-819
+run_uuid: 05174944e7e74d31953ae315ae4c5028
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703116553728
+status: 3
+tags: []
+user_id: amirmahdi
