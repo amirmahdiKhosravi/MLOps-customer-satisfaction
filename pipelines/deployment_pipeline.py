@@ -28,7 +28,7 @@ def deployment_trigger(accuracy: float, config: DeploymentTriggerConfig):
     decides if it is good enough to deploy or not"""
     return accuracy >= config.min_accuracy
 
-@pipeline(enable_cache= True, settings={"docker_settings": docker_settings})
+@pipeline(enable_cache= True, settings={"docker": docker_settings})
 def continuous_deployment_pipeline(min_accuracy: float = 0.92,
     workers: int = 1,
     timeout: int = DEFAULT_SERVICE_START_STOP_TIMEOUT):
@@ -38,10 +38,8 @@ def continuous_deployment_pipeline(min_accuracy: float = 0.92,
     #model = train_model(X_train, X_test, y_train, y_test)
     r2, rmse = evaluate_model(model, X_test, y_test)
     deployment_decision = deployment_trigger(r2)
-    mlflow_model_deployer_step(
-        model=model,
-        deployment_decision = deployment_decision
+    mlflow_model_deployer_step(model=model,
+        deploy_decision = deployment_decision
         workers = workers,
-        timeout = timeout
-    )
+        timeout = timeout)
     
